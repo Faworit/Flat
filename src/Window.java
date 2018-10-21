@@ -1,9 +1,9 @@
 public class Window {
     double height;
-    double weight;
+    double width;
 
     Window(double height, double weight){
         this.height = height;
-        this.weight = weight;
+        this.width = weight;
     }
 }

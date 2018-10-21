@@ -16,9 +16,35 @@ public class Flat extends Constants {
                 System.out.println("You enter not correct height");
             }
         }
-        while(height<=0);
-
+       while(height<=0);
+        Create wall = new Create();
         ArrayList<Wall> kitchenWalls = new ArrayList<>();
+        kitchenWalls = wall.createWalls(height);
+        //пробовал как работает метод
+       /* for (int i = 0; i<kitchenWall.size(); i++){
+            Object obj = kitchenWall.get(i);
+            System.out.println(((Wall) obj).weight);
+        }*/
+       ArrayList<Wall> livingRoomWalls = new ArrayList<>();
+       livingRoomWalls = wall.createWalls(height);
+       ArrayList<Wall> bedRoomWalls = new ArrayList<>();
+       bedRoomWalls = wall.createWalls(height);
+
+       Create door = new Create();
+       ArrayList<Door> kitchenDoors = new ArrayList<>();
+        kitchenDoors = door.createDoors(height);
+
+
+
+
+
+
+
+
+
+
+
+       /* ArrayList<Wall> kitchenWalls = new ArrayList<>();
         int id;
         double weight;
         do{
@@ -43,7 +69,7 @@ public class Flat extends Constants {
             System.out.println("Enter weight of wall");
             String w = rd.readLine();
             weight = Double.parseDouble(w);
-            if(id<=0 || weight<=0){9
+            if(id<=0 || weight<=0){
                 System.out.println("You enter not correct information");
             }
         }
@@ -82,6 +108,68 @@ public class Flat extends Constants {
         kitchenWalls.add(eastKitchenWall);
 
         // I finish walls of kitchen, continue next room
+
+        ArrayList<Wall> livingRoomWalls = new ArrayList<>();
+        do{
+            System.out.println("Enter id of wall");
+            String a = rd.readLine();
+            id = Integer.parseInt(a);
+            System.out.println("Enter weight of wall");
+            String w = rd.readLine();
+            weight = Double.parseDouble(w);
+            if(id<=0 || weight<=0){
+                System.out.println("You enter not correct information");
+            }
+        }
+        while(id<=0 || weight<=0);
+        Wall northLivingRoomWall = new Wall(id, height, weight);
+        livingRoomWalls.add(northLivingRoomWall);
+
+        do{
+            System.out.println("Enter id of wall");
+            String a = rd.readLine();
+            id = Integer.parseInt(a);
+            System.out.println("Enter weight of wall");
+            String w = rd.readLine();
+            weight = Double.parseDouble(w);
+            if(id<=0 || weight<=0){
+                System.out.println("You enter not correct information");
+            }
+        }
+        while(id<=0 || weight<=0);
+        Wall southLivingRoomWall = new Wall(id, height, weight);
+        livingRoomWalls.add(southLivingRoomWall);
+
+        do{
+            System.out.println("Enter id of wall");
+            String a = rd.readLine();
+            id = Integer.parseInt(a);
+            System.out.println("Enter weight of wall");
+            String w = rd.readLine();
+            weight = Double.parseDouble(w);
+            if(id<=0 || weight<=0){
+                System.out.println("You enter not correct information");
+            }
+        }
+        while(id<=0 || weight<=0);
+        Wall westLivingRoomWall = new Wall(id, height, weight);
+        livingRoomWalls.add(westLivingRoomWall);
+
+        do{
+            System.out.println("Enter id of wall");
+            String a = rd.readLine();
+            id = Integer.parseInt(a);
+            System.out.println("Enter weight of wall");
+            String w = rd.readLine();
+            weight = Double.parseDouble(w);
+            if(id<=0 || weight<=0){
+                System.out.println("You enter not correct information");
+            }
+        }
+        while(id<=0 || weight<=0);
+        Wall eastLivingRoomWall = new Wall(id, height, weight);
+        livingRoomWalls.add(eastLivingRoomWall);
+        */
 
 
 
