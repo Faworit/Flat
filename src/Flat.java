@@ -32,7 +32,15 @@ public class Flat extends Constants {
 
        Create door = new Create();
        ArrayList<Door> kitchenDoors = new ArrayList<>();
-        kitchenDoors = door.createDoors(height);
+       kitchenDoors = door.createDoors(height);
+       ArrayList<Door> livingRoomDoors = new ArrayList<>();
+       livingRoomDoors = door.createDoors(height);
+       ArrayList<Door> bedRoomDoors = new ArrayList<>();
+       bedRoomDoors = door.createDoors(height);
+
+
+       //Доделай окна и сортировку с расчетами
+
 
 
 
