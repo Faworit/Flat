@@ -111,4 +111,44 @@ public class Create {
 
         return doors;
     }
+    public ArrayList<Window> createWindows(double height) throws IOException {
+        ArrayList<Window> windows = new ArrayList<>();
+        String exit;
+        String ex = "exit";
+        do {
+            BufferedReader rd = new BufferedReader(new InputStreamReader(System.in));
+            double heightOfWindow;
+            do {
+                System.out.println("Enter height of window");
+                String a = rd.readLine();
+                heightOfWindow = Double.parseDouble(a);
+                if (heightOfWindow > height) {
+                    System.out.println("window above wall");
+                }
+            }
+            while (heightOfWindow > height);
+
+            int id;
+            double width;
+            do {
+                System.out.println("Enter id of window");
+                String a = rd.readLine();
+                id = Integer.parseInt(a);
+                System.out.println("Enter width of window");
+                String b = rd.readLine();
+                width = Double.parseDouble(b);
+                if (id <= 0 || width <= 0) {
+                    System.out.println("You enter not correct information");
+                }
+            }
+            while (id <= 0 || width <= 0);
+            Window window = new Window(id, height, width);
+            windows.add(window);
+            System.out.println("If you don't need to create next window enter \"exit\"");
+            exit = rd.readLine();
+        }
+        while (!exit.equals(ex));
+
+        return windows;
+    }
 }

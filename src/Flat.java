@@ -38,6 +38,28 @@ public class Flat extends Constants {
        ArrayList<Door> bedRoomDoors = new ArrayList<>();
        bedRoomDoors = door.createDoors(height);
 
+       Create window = new Create();
+       ArrayList<Window> kitchenWindoews = new ArrayList<>();
+       kitchenWindoews = window.createWindows(height);
+       ArrayList<Window> livingRoomWindows = new ArrayList<>();
+       livingRoomWindows = window.createWindows(height);
+       ArrayList<Window> bedRoomWindows = new ArrayList<>();
+       bedRoomWindows = window.createWindows(height);
+
+       Room kitchen = new Room(kitchenWalls, kitchenDoors, kitchenWindoews);
+       Room livingRoom = new Room(livingRoomWalls, livingRoomDoors, livingRoomWindows);
+       Room bedRoom = new Room(bedRoomWalls, bedRoomDoors, bedRoomWindows);
+       ArrayList<Room> rooms = new ArrayList<>();
+       rooms.add(kitchen);
+       rooms.add(livingRoom);
+       rooms.add(bedRoom);
+
+       Calculation calculationWindows = new Calculation();
+       int countWindows = calculationWindows.calculationWindows(rooms);
+        System.out.println(countWindows);
+
+
+
 
        //Доделай окна и сортировку с расчетами
 
