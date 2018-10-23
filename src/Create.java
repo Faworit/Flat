@@ -11,10 +11,10 @@ public class Create {
         int id;
         double width;
         do{
-            System.out.println("Enter id of wall");
+            System.out.println("Enter id of north wall");
             String a = rd.readLine();
             id = Integer.parseInt(a);
-            System.out.println("Enter wall width");
+            System.out.println("Enter north wall width");
             String w = rd.readLine();
             width = Double.parseDouble(w);
             if(id<=0 || width<=0){
@@ -26,10 +26,10 @@ public class Create {
         walls.add(northWall);
 
         do{
-            System.out.println("Enter id of wall");
+            System.out.println("Enter id of south wall");
             String a = rd.readLine();
             id = Integer.parseInt(a);
-            System.out.println("Enter wall width");
+            System.out.println("Enter south wall width");
             String w = rd.readLine();
             width = Double.parseDouble(w);
             if(id<=0 || width<=0){
@@ -41,10 +41,10 @@ public class Create {
         walls.add(southWall);
 
         do{
-            System.out.println("Enter id of wall");
+            System.out.println("Enter id of west wall");
             String a = rd.readLine();
             id = Integer.parseInt(a);
-            System.out.println("Enter wall width");
+            System.out.println("Enter west wall width");
             String w = rd.readLine();
             width = Double.parseDouble(w);
             if(id<=0 || width<=0){
@@ -56,10 +56,10 @@ public class Create {
         walls.add(westWall);
 
         do{
-            System.out.println("Enter id of wall");
+            System.out.println("Enter id of east wall");
             String a = rd.readLine();
             id = Integer.parseInt(a);
-            System.out.println("Enter wall width");
+            System.out.println("Enter east wall width");
             String w = rd.readLine();
             width = Double.parseDouble(w);
             if(id<=0 || width<=0){

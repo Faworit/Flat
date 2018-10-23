@@ -20,11 +20,7 @@ public class Flat extends Constants {
         Create wall = new Create();
         ArrayList<Wall> kitchenWalls = new ArrayList<>();
         kitchenWalls = wall.createWalls(height);
-        //пробовал как работает метод
-       /* for (int i = 0; i<kitchenWall.size(); i++){
-            Object obj = kitchenWall.get(i);
-            System.out.println(((Wall) obj).weight);
-        }*/
+
        ArrayList<Wall> livingRoomWalls = new ArrayList<>();
        livingRoomWalls = wall.createWalls(height);
        ArrayList<Wall> bedRoomWalls = new ArrayList<>();
@@ -56,13 +52,19 @@ public class Flat extends Constants {
 
        Calculation calculation = new Calculation();
        int countWindows = calculation.calculationWindows(rooms);
-        System.out.println(countWindows);
+        System.out.println("Count of Windows " + countWindows);
 
         int countDoors = calculation.calculationDoors(rooms);
-        System.out.println(countDoors);
+        System.out.println("Count of Doors " + countDoors);
 
        double squareOfFlat = calculation.squareOfFlat(rooms);
-        System.out.println(squareOfFlat);
+        System.out.println("Square of flat " + squareOfFlat);
+
+        int countWalls = calculation.countOfWall(kitchenWalls, livingRoomWalls, bedRoomWalls);
+        System.out.println("Count of Walls" + countWalls);
+
+        /*int countWalls = calculation.countOfWall(rooms);
+        System.out.println("Count of walls " + countWalls);*/
 
 
     }
