@@ -74,7 +74,7 @@ public class Create {
     public ArrayList<Door> createDoors(double height) throws IOException {
         ArrayList<Door> doors = new ArrayList<>();
         String exit;
-        String ex = "exit";
+
         do {
             BufferedReader rd = new BufferedReader(new InputStreamReader(System.in));
             double heightOfDoor;
@@ -104,17 +104,22 @@ public class Create {
             while (id <= 0 || width <= 0);
             Door door = new Door(id, height, width);
             doors.add(door);
-            System.out.println("If you don't need to create next door enter \"exit\"");
-            exit = rd.readLine();
+            String change;
+            do {
+                System.out.println("If you don't need to create next window enter \"exit\"");
+                System.out.println("If you need to create next window enter \"next\"");
+                change = rd.readLine();
+            }
+            while(!change.equals("exit") && !change.equals("next"));
+            exit=change;
         }
-        while(!exit.equals(ex));
+        while (!exit.equals("exit") || exit.equals("next"));
 
         return doors;
     }
     public ArrayList<Window> createWindows(double height) throws IOException {
         ArrayList<Window> windows = new ArrayList<>();
         String exit;
-        String ex = "exit";
         do {
             BufferedReader rd = new BufferedReader(new InputStreamReader(System.in));
             double heightOfWindow;
@@ -144,10 +149,16 @@ public class Create {
             while (id <= 0 || width <= 0);
             Window window = new Window(id, height, width);
             windows.add(window);
-            System.out.println("If you don't need to create next window enter \"exit\"");
-            exit = rd.readLine();
+            String change;
+            do {
+                System.out.println("If you don't need to create next window enter \"exit\"");
+                System.out.println("If you need to create next window enter \"next\"");
+                change = rd.readLine();
+            }
+            while(!change.equals("exit") && !change.equals("next"));
+            exit=change;
         }
-        while (!exit.equals(ex));
+        while (!exit.equals("exit") || exit.equals("next"));
 
         return windows;
     }

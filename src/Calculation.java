@@ -67,19 +67,14 @@ public class Calculation {
 
     public int countOfWall(ArrayList<Wall> kitchen, ArrayList<Wall> livingroom, ArrayList<Wall> bedroom){
         int countOfWall=0;
-        ArrayList<Wall> allWalls = new ArrayList<>();
-        ArrayList<Integer> idOfWalls = new ArrayList<>();
-        HashSet<Integer> uniqueId = new HashSet<>();
-        HashSet<Wall> uniqueWall = new HashSet<>();
+        HashSet<Wall> uniqueWalls = new HashSet<>();
+        uniqueWalls.addAll(kitchen);
+        uniqueWalls.addAll(livingroom);
+        uniqueWalls.addAll(bedroom);
+        for(int i =0; i<uniqueWalls.size(); i++){
+            countOfWall++;
+        }
 
-       allWalls.addAll(kitchen);
-       allWalls.addAll(livingroom);
-       allWalls.addAll(bedroom);
-
-       uniqueWall.addAll(allWalls);
-       for (int i=0; i<allWalls.size(); i++){
-           countOfWall++;
-       }
         return countOfWall;
     }
 
