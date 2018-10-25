@@ -9,7 +9,7 @@ public class Calculation {
         ArrayList<ArrayList<Window>> windows = new ArrayList<>();
         for (int i = 0; i < rooms.size(); i++) {
             Object obj = rooms.get(i);
-            windows.add(((Room) obj).windows);
+            windows.add(((Room) obj).getWindows());
         }
         for (int i = 0; i < windows.size(); i++) {
             ArrayList<Window> win = new ArrayList<>();
@@ -26,7 +26,7 @@ public class Calculation {
         ArrayList<ArrayList<Door>> doors = new ArrayList<>();
         for (int i = 0; i < rooms.size(); i++) {
             Object obj = rooms.get(i);
-            doors.add(((Room) obj).doors);
+            doors.add(((Room) obj).getDoors());
         }
         for (int i = 0; i < doors.size(); i++) {
             ArrayList<Door> dor = new ArrayList<>();
@@ -46,7 +46,7 @@ public class Calculation {
         ArrayList<ArrayList<Wall>> walls = new ArrayList<>();
         for (int i = 0; i < rooms.size(); i++) {
             Object obj = rooms.get(i);
-            walls.add(((Room) obj).walls);
+            walls.add(((Room) obj).getWalls());
         }
         Object nsWall;
         Object ewWall;
@@ -56,7 +56,7 @@ public class Calculation {
             wal = walls.get(i);
             nsWall = wal.get(1);
             ewWall = wal.get(3);
-            square = ((Wall) nsWall).width * ((Wall) ewWall).width;
+            square = ((Wall) nsWall).getWidth() * ((Wall) ewWall).getWidth();
             squareOfRoom.add(square);
         }
         for (int i = 0; i < squareOfRoom.size(); i++) {
@@ -74,42 +74,6 @@ public class Calculation {
         for(int i =0; i<uniqueWalls.size(); i++){
             countOfWall++;
         }
-
         return countOfWall;
     }
-
-    /*public int countOfWall(ArrayList<Room> rooms) {
-        int countOfWall = 0;
-        ArrayList<Object> singleWalls = new ArrayList<>();
-        ArrayList<Integer> idOfWall = new ArrayList<>();
-        ArrayList<ArrayList<Wall>> walls = new ArrayList<>();
-        Set<Integer> uniqueId = new HashSet<>();
-
-        for (int i = 0; i < rooms.size(); i++) {
-            Object obj = rooms.get(i);
-            walls.add(((Room) obj).walls);
-        }
-
-        for (int i = 0; i < walls.size(); i++) {
-            ArrayList<Wall> wal = new ArrayList<>();
-            wal = walls.get(i);
-            for (int z = 0; z < wal.size(); z++) {
-                Object nWall;
-                nWall = wal.get(i);
-                singleWalls.add(nWall);
-            }
-        }
-        for (int i = 0; i < singleWalls.size(); i++) {
-            Object nWall;
-            nWall = singleWalls.get(i);
-            int id = ((Wall) nWall).id;
-            idOfWall.add(id);
-        }
-
-        uniqueId.addAll(idOfWall);
-        for (int i = 0; i < uniqueId.size(); i++) {
-            countOfWall++;
-        }
-        return countOfWall;
-    }*/
 }

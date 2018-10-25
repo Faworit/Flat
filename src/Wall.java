@@ -1,14 +1,22 @@
 import java.util.Objects;
 
 public class Wall {
-    int id;
-    double height;
-    double width;
+    private int id;
+    private double height;
+    private double width;
 
     Wall(int id, double height, double weight){
         this.id = id;
         this.height = height;
         this.width = weight;
+    }
+
+    public double getWidth() {
+        return width;
+    }
+
+    public int getId() {
+        return id;
     }
 
     @Override
